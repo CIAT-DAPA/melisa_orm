@@ -42,7 +42,7 @@ class Question(Document):
     Methods:
     -------
     save()
-        Saves the Intent object to the database.
+        Saves the Intent object to the database
     delete()
         Deletes the Intent object from the database
     """
