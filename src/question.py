@@ -44,7 +44,7 @@ class Question(Document):
     save()
         Saves the Intent object to the database.
     delete()
-        Deletes the Intent object from the database.
+        Deletes the Intent object from the database
     """
     meta = { 'collection': 'question'}
 
