@@ -1,4 +1,4 @@
-from .track import Track
+from .trace import Trace
 from mongoengine import Document, StringField
 
 class Form(Document):
@@ -23,4 +23,4 @@ class Form(Document):
 
     name = StringField(required=True)
     command = StringField(required=True)
-    track = EmbeddedDocumentField(Track, required=True)
+    trace = EmbeddedDocumentField(Trace, required=True)
