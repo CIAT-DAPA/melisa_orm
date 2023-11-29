@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="modelswp",
-    version='v1.0.0',
+    version='v0.0.1',
     author="CarlosNasayo",
     author_email="c.sotelo@cgiar.com",
     description="orm for mellisa",
