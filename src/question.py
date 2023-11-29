@@ -1,5 +1,5 @@
 from .form import Form
-from .track import Track
+from .trace import Trace
 from mongoengine import Document, ReferenceField, EmbeddedDocument, EmbeddedDocumentListField, StringField, EnumField
 
 class QuestionKindEnum:
@@ -54,4 +54,4 @@ class Question(Document):
     kind = EnumField(QuestionKindEnum, required=True)
     order = IntField()
     validations = EmbeddedDocumentListField(Validation, required=True)
-    track = EmbeddedDocumentField(Track, required=True)
+    trace = EmbeddedDocumentField(Trace, required=True)
