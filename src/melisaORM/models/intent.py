@@ -1,6 +1,7 @@
 from mongoengine import Document, StringField, EnumField
+from enum import Enum
 
-class IntentEnum:
+class IntentEnum(Enum):
     """"
     Represents the group of intent
     """

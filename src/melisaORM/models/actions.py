@@ -1,8 +1,9 @@
 from .form import Form
 from .track import Track
-from mongoengine import Document, ReferenceField, EmbeddedDocument, StringField, EnumField
+from mongoengine import Document, ReferenceField, EmbeddedDocument, StringField, EnumField,EmbeddedDocumentField
+from enum import Enum
 
-class ActionRequestEnum:
+class ActionRequestEnum(Enum):
     """"
     Represents the type of request
     """

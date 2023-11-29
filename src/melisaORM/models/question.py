@@ -1,8 +1,9 @@
 from .form import Form
 from .track import Track
-from mongoengine import Document, ReferenceField, EmbeddedDocument, EmbeddedDocumentListField, StringField, EnumField
+from mongoengine import Document, ReferenceField, EmbeddedDocument, EmbeddedDocumentListField, StringField, EnumField,EmbeddedDocumentField, IntField
+from enum import Enum
 
-class QuestionKindEnum:
+class QuestionKindEnum(Enum):
     """"
     Represents the type of question
     """
