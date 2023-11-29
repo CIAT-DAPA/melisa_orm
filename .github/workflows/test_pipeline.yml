@@ -1,6 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Devops ORM_MELISA
+name: Devops ORMMELISA
 
 on:
   push:
@@ -73,13 +74,13 @@ jobs:
         fetch-depth: '0'
     # API Zip
     - name: Zip artifact for deployment
-      run: zip releaseModels.zip ./src/* -r
+      run: zip releaseORM.zip ./src/* -r
     # Upload Artifacts
     - name: Upload Model artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
-        name: ORM_MELISA
-        path: releaseModels.zip
+        name: ORM
+        path: releaseORM.zip
     # Generate Tagname
     - name: Generate Tagname for release
       id: taggerDryRun
@@ -112,8 +113,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./releaseModels.zip
-        asset_name: releaseModels.zip
+        asset_path: ./releaseORM.zip
+        asset_name: releaseORM.zip
         asset_content_type: application/zip
     # update version setup.py
     - name: Checkout code

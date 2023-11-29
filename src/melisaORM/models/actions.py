@@ -1,8 +1,9 @@
+from mongoengine import Document, ReferenceField, EmbeddedDocumentField, StringField, EnumField
+from enum import Enum
 from .form import Form
 from .track import Track
-from mongoengine import Document, ReferenceField, EmbeddedDocument, StringField, EnumField
 
-class ActionRequestEnum:
+class ActionRequestEnum(Enum):
     """"
     Represents the type of request
     """
@@ -12,7 +13,7 @@ class ActionRequestEnum:
 
 class Action(Document):
     """"
-    Represents a Action in the database.
+    Represents an Action in the database.
 
     Attributes:
     ----------
@@ -27,17 +28,16 @@ class Action(Document):
     track: Track
         Track record. required.
 
-
     Methods:
     -------
     save()
-        Saves the Intent object to the database.
+        Saves the Action object to the database.
     delete()
-        Deletes the Intent object from the database.
+        Deletes the Action object from the database.
     """
-    meta = { 'collection': 'action'}
+    meta = {'collection': 'action'}
 
-    form = ReferenceField(Form)
+    form = ReferenceField(Form, required=True)
     name = StringField(required=True)
     call_url = StringField(required=True)
     request = EnumField(ActionRequestEnum, required=True)
