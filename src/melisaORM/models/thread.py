@@ -1,8 +1,9 @@
 from .user import User
 from .intent import Intent
-from mongoengine import Document, EnumField
+from mongoengine import Document, EnumField,ReferenceField
+from enum import Enum
 
-class ThreadEnum:
+class ThreadEnum(Enum):
     """"
     Represents the status of thread
     """

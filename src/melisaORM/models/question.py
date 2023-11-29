@@ -1,8 +1,9 @@
 from .form import Form
-from .trace import Trace
-from mongoengine import Document, ReferenceField, EmbeddedDocument, EmbeddedDocumentListField, StringField, EnumField
+from .track import Track
+from mongoengine import Document, ReferenceField, EmbeddedDocument, EmbeddedDocumentListField, StringField, EnumField,EmbeddedDocumentField, IntField
+from enum import Enum
 
-class QuestionKindEnum:
+class QuestionKindEnum(Enum):
     """"
     Represents the type of question
     """
@@ -42,9 +43,9 @@ class Question(Document):
     Methods:
     -------
     save()
-        Saves the Intent object to the database
+        Saves the Intent object to the database.
     delete()
-        Deletes the Intent object from the database
+        Deletes the Intent object from the database.
     """
     meta = { 'collection': 'question'}
 
@@ -54,4 +55,4 @@ class Question(Document):
     kind = EnumField(QuestionKindEnum, required=True)
     order = IntField()
     validations = EmbeddedDocumentListField(Validation, required=True)
-    trace = EmbeddedDocumentField(Trace, required=True)
+    track = EmbeddedDocumentField(Track, required=True)
