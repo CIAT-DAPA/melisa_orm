@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ormMelisa",
-    version='v1.0.0',
+    version='v1.0.1',
     author="Stevensotelo",
     author_email="c.sotelo@cgiar.com",
     description="orm for mellisa",
