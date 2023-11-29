@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="modelswp",
+    name="ormMelisa",
     version='v1.0.0',
-    author="CarlosNasayo",
+    author="Stevensotelo",
     author_email="c.sotelo@cgiar.com",
     description="orm for mellisa",
     url="https://github.com/CIAT-DAPA/melisa_orm",
