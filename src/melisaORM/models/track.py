@@ -1,6 +1,6 @@
 from mongoengine import Document, EmbeddedDocument, DateTimeField, StringField, BooleanField
 
-class Trace(EmbeddedDocument):
+class Track(EmbeddedDocument):
     """"
     Represents a class to trace the changes in the records
 

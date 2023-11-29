@@ -1,8 +1,9 @@
 from .form import Form
-from .trace import Trace
-from mongoengine import Document, ReferenceField, EmbeddedDocument, StringField, EnumField
+from .track import Track
+from mongoengine import Document, ReferenceField, EmbeddedDocument, StringField, EnumField,EmbeddedDocumentField
+from enum import Enum
 
-class ActionRequestEnum:
+class ActionRequestEnum(Enum):
     """"
     Represents the type of request
     """
@@ -41,4 +42,4 @@ class Action(Document):
     name = StringField(required=True)
     call_url = StringField(required=True)
     request = EnumField(ActionRequestEnum, required=True)
-    trace = EmbeddedDocumentField(Trace, required=True)
+    track = EmbeddedDocumentField(Track, required=True)
