@@ -7,9 +7,9 @@ from datetime import datetime
 dir_path = os.path.dirname(os.path.realpath(__file__))
 orm_dir_path = os.path.abspath(os.path.join(dir_path, '..'))
 sys.path.append(orm_dir_path)
-from melisaORM.models.form import Form
-from melisaORM.models.track import Track
-from melisaORM.models.actions import Action, ActionRequestEnum
+from melisa_orm.models.form import Form
+from melisa_orm.models.track import Track
+from melisa_orm.models.actions import Action, ActionRequestEnum
 #
 class TestAction(unittest.TestCase):
 

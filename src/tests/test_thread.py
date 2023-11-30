@@ -7,13 +7,13 @@ from datetime import datetime
 dir_path = os.path.dirname(os.path.realpath(__file__))
 orm_dir_path = os.path.abspath(os.path.join(dir_path, '..'))
 sys.path.append(orm_dir_path)
-from melisaORM.models.thread import Thread,ThreadEnum
-from melisaORM.models.track import Track
-from melisaORM.models.melisa import Melisa
-from melisaORM.models.user import User
-from melisaORM.models.intent import Intent, IntentEnum
-from melisaORM.models.thread import Thread,ThreadEnum
-from melisaORM.models.chat import Chat,ChatKindEnum,ChatStatusEnum,ChatWhomEnum
+from melisa_orm.models.thread import Thread,ThreadEnum
+from melisa_orm.models.track import Track
+from melisa_orm.models.melisa import Melisa
+from melisa_orm.models.user import User
+from melisa_orm.models.intent import Intent, IntentEnum
+from melisa_orm.models.thread import Thread,ThreadEnum
+from melisa_orm.models.chat import Chat,ChatKindEnum,ChatStatusEnum,ChatWhomEnum
 
 class Testhread(unittest.TestCase):
 
