@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ormMelisa",
-    version='v1.0.1',
-    author="Stevensotelo",
-    author_email="c.sotelo@cgiar.com",
+    name="melisa_orm",
+    version='v1.0.0',
+    author="stevensotelo",
+    author_email="h.sotelo@cgiar.com",
     description="orm for mellisa",
     url="https://github.com/CIAT-DAPA/melisa_orm",
     download_url="https://github.com/CIAT-DAPA/melisa_orm",
