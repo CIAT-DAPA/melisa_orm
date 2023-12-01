@@ -1,7 +1,7 @@
-from mongoengine import Document, StringField, EnumField
+from mongoengine import Document, StringField, EnumField, IntField
 from enum import Enum
 
-class IntentEnum(Enum):
+class IntentGroupEnum(Enum):
     """"
     Represents the group of intent
     """
@@ -30,4 +30,5 @@ class Intent(Document):
     meta = { 'collection': 'intent'}
 
     name = StringField(required=True)
-    group = EnumField(IntentEnum, required=True)
+    group = EnumField(IntentGroupEnum, required=True)
+    ext_id = IntField()
