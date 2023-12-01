@@ -6,7 +6,7 @@ from mongoengine import *
 dir_path = os.path.dirname(os.path.realpath(__file__))
 orm_dir_path = os.path.abspath(os.path.join(dir_path, '..'))
 sys.path.append(orm_dir_path)
-from melisa_orm.models.intent import Intent,IntentEnum
+from melisa_orm.models.intent import Intent,IntentGroupEnum
 
 
 class TestIntent(unittest.TestCase):
@@ -17,7 +17,7 @@ class TestIntent(unittest.TestCase):
    
         self.intent = Intent(
             name='name_intent',
-            group=IntentEnum.QA,
+            group=IntentGroupEnum.QA,
             ext_id=1
         )
     def tearDown(self):
@@ -32,7 +32,7 @@ class TestIntent(unittest.TestCase):
 
         intent = Intent.objects(id=self.intent.id).first()
         self.assertEqual(intent.name, 'name_intent')
-        self.assertEqual(intent.group, IntentEnum.QA)
+        self.assertEqual(intent.group, IntentGroupEnum.QA)
         self.assertEqual(intent.ext_id, 1)
 
 if __name__ == '__main__':
