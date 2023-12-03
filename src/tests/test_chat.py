@@ -66,7 +66,6 @@ class TestChat(unittest.TestCase):
             ext_id='ext-id',
             status=ChatStatusEnum.OK,
             whom=ChatWhomEnum.USER,
-            values=[],
             kind_msg=ChatKindEnum.TEXT
         )
 
