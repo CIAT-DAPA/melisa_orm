@@ -49,7 +49,6 @@ class TestChat(unittest.TestCase):
             name='name_intent',
             group=IntentGroupEnum.QA
         )
-        self.intent.save()
         self.thread = Thread(
             user=self.user,
             intent=self.intent,
@@ -75,7 +74,6 @@ class TestChat(unittest.TestCase):
 
         self.melisa.delete()
         self.user.delete()
-        self.intent.delete()
         self.thread.delete()
         self.chat.delete()
 
