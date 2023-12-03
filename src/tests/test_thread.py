@@ -13,7 +13,6 @@ from melisa_orm.models.melisa import Melisa
 from melisa_orm.models.user import User
 from melisa_orm.models.intent import Intent, IntentGroupEnum
 from melisa_orm.models.thread import Thread,ThreadEnum
-from melisa_orm.models.chat import Chat,ChatKindEnum,ChatStatusEnum,ChatWhomEnum
 
 class Testhread(unittest.TestCase):
 
@@ -46,6 +45,7 @@ class Testhread(unittest.TestCase):
         self.user.save()
 
         self.intent = Intent(
+            id = 1,
             name='name_intent',
             group=IntentGroupEnum.QA
         )
@@ -55,11 +55,9 @@ class Testhread(unittest.TestCase):
             intent=self.intent,
             status=ThreadEnum.OPENED
         )
-        
 
 
     def tearDown(self):
-        
         self.melisa.delete()
         self.user.delete()
         self.intent.delete()
@@ -76,10 +74,6 @@ class Testhread(unittest.TestCase):
         self.assertEqual(thread.intent, self.intent)
         self.assertEqual(thread.status, ThreadEnum.OPENED)
 
-
-
-
-        
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,6 +7,7 @@ class ChatStatusEnum(Enum):
     Representa el estado del chat
     """
     OK = 'ok'
+    PENDING = 'pending'
     ERROR = 'error'
 
 class ChatWhomEnum(Enum):
@@ -22,6 +23,10 @@ class ChatKindEnum(Enum):
     """
     TEXT = 'text'
     IMAGE = 'img'
+
+    @staticmethod
+    def list():
+        return dict((label.name, idx) for idx, label in enumerate(ChatKindEnum))
 
 class Chat(Document):
     """"
@@ -52,10 +57,9 @@ class Chat(Document):
     date = DateTimeField(required=True)
     original = StringField(required=True)
     text = StringField(required=True)
+    status = EnumField(ChatStatusEnum, required=True)
+    kind_msg = EnumField(ChatKindEnum, required=True)
+    whom = EnumField(ChatWhomEnum, required=True)
+    ext_id = StringField(max_length=200)
     slots = DictField()
     tags = DictField()
-    ext_id = StringField(max_length=200)
-    status = EnumField(ChatStatusEnum, required=True)
-    whom = EnumField(ChatWhomEnum, required=True)
-    values = ListField()
-    kind_msg = EnumField(ChatKindEnum, required=True)
