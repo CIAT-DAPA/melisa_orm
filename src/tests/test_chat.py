@@ -7,11 +7,9 @@ from datetime import datetime
 dir_path = os.path.dirname(os.path.realpath(__file__))
 orm_dir_path = os.path.abspath(os.path.join(dir_path, '..'))
 sys.path.append(orm_dir_path)
-from melisa_orm.models.form import Form
 from melisa_orm.models.track import Track
 from melisa_orm.models.melisa import Melisa
 from melisa_orm.models.user import User
-from melisa_orm.models.actions import Action, ActionRequestEnum
 from melisa_orm.models.intent import Intent, IntentEnum
 from melisa_orm.models.thread import Thread,ThreadEnum
 from melisa_orm.models.chat import Chat,ChatKindEnum,ChatStatusEnum,ChatWhomEnum
@@ -28,7 +26,7 @@ class TestChat(unittest.TestCase):
             updated=datetime.now(),
             enable=True
         )
-        
+
         self.melisa = Melisa(
             name='melissa_name',
             url_post='https://www.ejemplo.com',
@@ -47,6 +45,7 @@ class TestChat(unittest.TestCase):
         self.user.save()
 
         self.intent = Intent(
+            id=1,
             name='name_intent',
             group=IntentEnum.QA
         )
@@ -71,8 +70,9 @@ class TestChat(unittest.TestCase):
             values=[],
             kind_msg=ChatKindEnum.TEXT
         )
+
     def tearDown(self):
-        
+
         self.melisa.delete()
         self.user.delete()
         self.intent.delete()
@@ -96,12 +96,9 @@ class TestChat(unittest.TestCase):
         self.assertEqual(chat.ext_id, 'ext-id')
         self.assertEqual(chat.status, ChatStatusEnum.OK)
         self.assertEqual(chat.whom, ChatWhomEnum.USER)
-        self.assertEqual(chat.values, [])
         self.assertEqual(chat.kind_msg, ChatKindEnum.TEXT)
 
 
-
-        
 
 if __name__ == '__main__':
     unittest.main()

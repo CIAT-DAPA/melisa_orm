@@ -21,6 +21,6 @@ class Intent(EmbeddedDocument):
         Group of the intent. required.
     """
 
+    id = IntField()
     name = StringField(required=True)
     group = EnumField(IntentGroupEnum, required=True)
-    ext_id = IntField()
