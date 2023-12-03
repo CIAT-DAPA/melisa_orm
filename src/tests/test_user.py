@@ -37,7 +37,7 @@ class TestUser(unittest.TestCase):
         self.melisa.delete()
         self.user.delete()
 
-    def test_create_form(self):
+    def test_create_user(self):
 
         self.user.save()
         self.assertIsNotNone(self.user.id)

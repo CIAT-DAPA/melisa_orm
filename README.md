@@ -30,6 +30,11 @@ If you want to download a specific version of orm you can do so by indicating th
 pip install git+https://github.com/CIAT-DAPA/melisa_orm@v0.2.0
 ````
 
+## Test
+````bash
+python -m unittest discover -s ./src/tests/ -p 'test_*.py'
+````
+
 ## Models
 
 ### Action
@@ -239,4 +244,3 @@ Methods:
 
 - `save()`: Saves the User object to the database.
 - `delete()`: Deletes the User object from the database.
-
