@@ -1,6 +1,6 @@
 from .user import User
 from .intent import Intent
-from mongoengine import Document, EnumField,ReferenceField
+from mongoengine import Document, EnumField,ReferenceField,EmbeddedDocumentField
 from enum import Enum
 
 class ThreadEnum(Enum):
@@ -10,6 +10,14 @@ class ThreadEnum(Enum):
     OPENED = 'opened'
     CLOSED = 'closed'
 
+class IntentGroupEnum(Enum):
+    """"
+    Represents the group of intent
+    """
+    QA = 'qa'
+    COMMAND = 'command'
+    FORM = 'form'
+
 class Thread(Document):
     """"
     Represents a thread of chat with a user in the database.
@@ -18,7 +26,7 @@ class Thread(Document):
     ----------
     user: ReferenceField
         Melisa where the user registered. required.
-    intent: ReferenceField
+    intent: EmbeddedDocumentField
         Intent discovered. required.
     status: ThreadEnum
         Status of the current thread. required.
@@ -31,5 +39,5 @@ class Thread(Document):
         Deletes the User object from the database.
     """
     user = ReferenceField(User)
-    intent = ReferenceField(Intent)
+    intent = EmbeddedDocumentField(Intent, required=True)
     status = EnumField(ThreadEnum, required=True)

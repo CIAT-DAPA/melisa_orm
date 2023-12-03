@@ -77,9 +77,5 @@ class Testhread(unittest.TestCase):
         self.assertEqual(thread.status, ThreadEnum.OPENED)
 
 
-
-
-        
-
 if __name__ == '__main__':
     unittest.main()

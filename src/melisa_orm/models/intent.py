@@ -1,4 +1,4 @@
-from mongoengine import Document, StringField, EnumField, IntField
+from mongoengine import EmbeddedDocument, StringField, EnumField, IntField
 from enum import Enum
 
 class IntentGroupEnum(Enum):
@@ -9,7 +9,7 @@ class IntentGroupEnum(Enum):
     COMMAND = 'command'
     FORM = 'form'
 
-class Intent(Document):
+class Intent(EmbeddedDocument):
     """"
     Represents an Intent in the database.
 
@@ -19,15 +19,7 @@ class Intent(Document):
         Melisa where the user registered. required.
     group: IntentEnum
         Group of the intent. required.
-
-    Methods:
-    -------
-    save()
-        Saves the Intent object to the database.
-    delete()
-        Deletes the Intent object from the database.
     """
-    meta = { 'collection': 'intent'}
 
     name = StringField(required=True)
     group = EnumField(IntentGroupEnum, required=True)
