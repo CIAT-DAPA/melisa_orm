@@ -10,7 +10,7 @@ sys.path.append(orm_dir_path)
 from melisa_orm.models.track import Track
 from melisa_orm.models.melisa import Melisa
 from melisa_orm.models.user import User
-from melisa_orm.models.intent import Intent, IntentEnum
+from melisa_orm.models.intent import Intent, IntentGroupEnum
 from melisa_orm.models.thread import Thread,ThreadEnum
 from melisa_orm.models.chat import Chat,ChatKindEnum,ChatStatusEnum,ChatWhomEnum
 
@@ -47,7 +47,7 @@ class TestChat(unittest.TestCase):
         self.intent = Intent(
             id=1,
             name='name_intent',
-            group=IntentEnum.QA
+            group=IntentGroupEnum.QA
         )
         self.intent.save()
         self.thread = Thread(
