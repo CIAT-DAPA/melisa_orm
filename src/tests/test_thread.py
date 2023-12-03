@@ -61,7 +61,7 @@ class Testhread(unittest.TestCase):
         self.user.delete()
         self.thread.delete()
 
-    def test_create_action(self):
+    def test_create_thread(self):
 
         self.thread.save()
         self.assertIsNotNone(self.thread.id)

@@ -77,7 +77,7 @@ class TestChat(unittest.TestCase):
         self.thread.delete()
         self.chat.delete()
 
-    def test_create_action(self):
+    def test_create_chat(self):
 
         self.chat.save()
         self.assertIsNotNone(self.chat.id)

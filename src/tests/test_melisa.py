@@ -27,7 +27,7 @@ class TestMelisa(unittest.TestCase):
         
         self.melisa.delete()
 
-    def test_create_form(self):
+    def test_create_melisa(self):
 
         self.melisa.save()
         self.assertIsNotNone(self.melisa.id)

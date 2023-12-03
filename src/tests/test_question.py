@@ -52,7 +52,7 @@ class TestQuestion(unittest.TestCase):
         
         self.form.delete()
         self.question.delete()
-    def test_create_form(self):
+    def test_create_question(self):
 
         self.question.save()
         self.assertIsNotNone(self.question.id)
