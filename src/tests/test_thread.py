@@ -49,7 +49,6 @@ class Testhread(unittest.TestCase):
             name='name_intent',
             group=IntentGroupEnum.QA
         )
-        self.intent.save()
         self.thread = Thread(
             user=self.user,
             intent=self.intent,
@@ -60,7 +59,6 @@ class Testhread(unittest.TestCase):
     def tearDown(self):
         self.melisa.delete()
         self.user.delete()
-        self.intent.delete()
         self.thread.delete()
 
     def test_create_action(self):
