@@ -27,6 +27,7 @@ class TestAction(unittest.TestCase):
         self.form = Form(
             name='name',
             command='comand',
+            ext_id = 1,
             track=self.track
         )
         self.form.save()

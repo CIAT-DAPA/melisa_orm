@@ -25,6 +25,7 @@ class TestForm(unittest.TestCase):
         
         self.form = Form(
             name='name',
+            ext_id = 1,
             command='comand',
             track=self.track
         )
@@ -40,6 +41,7 @@ class TestForm(unittest.TestCase):
 
         form = Form.objects(id=self.form.id).first()
         self.assertEqual(form.name, 'name')
+        self.assertEqual(form.ext_id, 1)
         self.assertEqual(form.command, 'comand')
 
 if __name__ == '__main__':
