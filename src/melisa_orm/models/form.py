@@ -1,5 +1,5 @@
 from .track import Track
-from mongoengine import Document, StringField, EmbeddedDocumentField
+from mongoengine import Document, StringField, EmbeddedDocumentField, IntField
 
 class Form(Document):
     """"
@@ -23,4 +23,5 @@ class Form(Document):
 
     name = StringField(required=True)
     command = StringField(required=True)
+    ext_id = IntField()
     track = EmbeddedDocumentField(Track, required=True)

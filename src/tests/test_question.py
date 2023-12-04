@@ -27,6 +27,7 @@ class TestQuestion(unittest.TestCase):
         self.form = Form(
             name='name',
             command='comand',
+            ext_id = 1,
             track=self.track
         )
         self.form.save()
@@ -49,7 +50,7 @@ class TestQuestion(unittest.TestCase):
 
         )
     def tearDown(self):
-        
+
         self.form.delete()
         self.question.delete()
     def test_create_question(self):
