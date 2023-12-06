@@ -33,7 +33,8 @@ class TestChat(unittest.TestCase):
             token='57eueheh',
             say_hi=True,
             say_wait=True,
-            countries=['colombia','panama']
+            countries=['colombia','panama'],
+            track=self.track
         )
         self.melisa.save()
 
