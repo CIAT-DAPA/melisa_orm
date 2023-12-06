@@ -1,5 +1,5 @@
-from mongoengine import Document, StringField, URLField, BooleanField, ListField
-
+from mongoengine import Document, StringField, URLField, BooleanField, ListField,EmbeddedDocumentField
+from .track import Track
 class Melisa(Document):
     """"
     Represents the Melisa in the database.
@@ -34,3 +34,4 @@ class Melisa(Document):
     say_hi = BooleanField(required=True)
     say_wait = BooleanField(required=True)
     countries = ListField(required=True)
+    track = EmbeddedDocumentField(Track, required=True)
