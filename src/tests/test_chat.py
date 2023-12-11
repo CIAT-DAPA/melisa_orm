@@ -53,7 +53,8 @@ class TestChat(unittest.TestCase):
         self.thread = Thread(
             user=self.user,
             intent=self.intent,
-            status=ThreadEnum.OPENED
+            status=ThreadEnum.OPENED,
+            date=datetime.now()
         )
         self.thread.save()
 
