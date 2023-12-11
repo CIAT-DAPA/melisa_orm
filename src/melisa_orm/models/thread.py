@@ -1,6 +1,6 @@
 from .user import User
 from .intent import Intent
-from mongoengine import Document, EnumField,ReferenceField,EmbeddedDocumentField
+from mongoengine import Document, EnumField,ReferenceField,EmbeddedDocumentField,DateTimeField
 from enum import Enum
 
 class ThreadEnum(Enum):
@@ -41,3 +41,4 @@ class Thread(Document):
     user = ReferenceField(User)
     intent = EmbeddedDocumentField(Intent, required=True)
     status = EnumField(ThreadEnum, required=True)
+    date = DateTimeField(required=True)
