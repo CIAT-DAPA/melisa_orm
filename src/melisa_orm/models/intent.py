@@ -8,6 +8,7 @@ class IntentGroupEnum(Enum):
     QA = 'qa'
     COMMAND = 'command'
     FORM = 'form'
+    UNKONW = 'unknown'
 
 class Intent(EmbeddedDocument):
     """"
