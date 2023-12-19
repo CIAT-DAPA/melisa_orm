@@ -10,6 +10,10 @@ class IntentGroupEnum(Enum):
     FORM = 'form'
     UNKONW = 'unknown'
 
+    @staticmethod
+    def list():
+        return dict((label.name, idx) for idx, label in enumerate(IntentGroupEnum))
+
 class Intent(EmbeddedDocument):
     """"
     Represents an Intent in the database.
