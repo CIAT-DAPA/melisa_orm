@@ -10,14 +10,6 @@ class ThreadEnum(Enum):
     OPENED = 'opened'
     CLOSED = 'closed'
 
-class IntentGroupEnum(Enum):
-    """"
-    Represents the group of intent
-    """
-    QA = 'qa'
-    COMMAND = 'command'
-    FORM = 'form'
-
 class Thread(Document):
     """"
     Represents a thread of chat with a user in the database.
